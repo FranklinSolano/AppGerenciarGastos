@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B58ECE28C38A0382E696B89 /* Pods_AppGerenciarGastos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0188883B6C3528739B648E3 /* Pods_AppGerenciarGastos.framework */; };
+		EB17611C2974941800567BEE /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17611B2974941800567BEE /* ProfileScreen.swift */; };
+		EB17611F2974946E00567BEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17611E2974946E00567BEE /* User.swift */; };
+		EB1761212974948F00567BEE /* GetCurrentEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1761202974948F00567BEE /* GetCurrentEmail.swift */; };
 		EB63E87F29710D53008EC5CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63E87E29710D53008EC5CE /* AppDelegate.swift */; };
 		EB63E88129710D53008EC5CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63E88029710D53008EC5CE /* SceneDelegate.swift */; };
 		EB63E88829710D54008EC5CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB63E88729710D54008EC5CE /* Assets.xcassets */; };
@@ -31,13 +34,15 @@
 		EBD3287F2972475C00F97A94 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3287E2972475C00F97A94 /* SettingsScreen.swift */; };
 		EBD328812972478500F97A94 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD328802972478500F97A94 /* SettingsVC.swift */; };
 		EBD3288429725BBA00F97A94 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3288329725BBA00F97A94 /* ProfileVC.swift */; };
-		EBD3288629725BDC00F97A94 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3288529725BDC00F97A94 /* ProfileScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		35A852EE842DD8FD9508F594 /* Pods-AppGerenciarGastos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGerenciarGastos.release.xcconfig"; path = "Target Support Files/Pods-AppGerenciarGastos/Pods-AppGerenciarGastos.release.xcconfig"; sourceTree = "<group>"; };
 		421FC1299B980D376A227ECE /* Pods-AppGerenciarGastos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppGerenciarGastos.debug.xcconfig"; path = "Target Support Files/Pods-AppGerenciarGastos/Pods-AppGerenciarGastos.debug.xcconfig"; sourceTree = "<group>"; };
 		A0188883B6C3528739B648E3 /* Pods_AppGerenciarGastos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppGerenciarGastos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB17611B2974941800567BEE /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		EB17611E2974946E00567BEE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EB1761202974948F00567BEE /* GetCurrentEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentEmail.swift; sourceTree = "<group>"; };
 		EB63E87B29710D53008EC5CE /* AppGerenciarGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGerenciarGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB63E87E29710D53008EC5CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB63E88029710D53008EC5CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +68,6 @@
 		EBD3287E2972475C00F97A94 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		EBD328802972478500F97A94 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		EBD3288329725BBA00F97A94 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		EBD3288529725BDC00F97A94 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,24 @@
 				35A852EE842DD8FD9508F594 /* Pods-AppGerenciarGastos.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB17611A297493F700567BEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB17611B2974941800567BEE /* ProfileScreen.swift */,
+			);
+			name = View;
+			path = ../Cell/View;
+			sourceTree = "<group>";
+		};
+		EB17611D2974945900567BEE /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				EB17611E2974946E00567BEE /* User.swift */,
+				EB1761202974948F00567BEE /* GetCurrentEmail.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		EB63E87229710D53008EC5CE = {
@@ -275,15 +297,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		EB64C7322973ABB5003254E5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EBD3288529725BDC00F97A94 /* ProfileScreen.swift */,
-			);
-			name = View;
-			path = ViewController/View;
-			sourceTree = "<group>";
-		};
 		EBBEEFBE2973AC8000C47187 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,8 +353,9 @@
 		EBD3288229725B9B00F97A94 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				EB17611D2974945900567BEE /* Modal */,
+				EB17611A297493F700567BEE /* View */,
 				EB64C7312973ABAA003254E5 /* ViewController */,
-				EB64C7322973ABB5003254E5 /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -462,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB63E89B29710F14008EC5CE /* RegisterScreen.swift in Sources */,
+				EB17611C2974941800567BEE /* ProfileScreen.swift in Sources */,
 				EBD3286C297116A000F97A94 /* HomeVC.swift in Sources */,
 				EB63E87F29710D53008EC5CE /* AppDelegate.swift in Sources */,
 				EB63E89829710EC5008EC5CE /* LoginScreen.swift in Sources */,
@@ -470,13 +485,14 @@
 				EB63E89D29710F38008EC5CE /* RegisterVC.swift in Sources */,
 				EBD3286E297116B200F97A94 /* HomeScreen.swift in Sources */,
 				EBD328762971E82200F97A94 /* HomeTableViewCell.swift in Sources */,
+				EB17611F2974946E00567BEE /* User.swift in Sources */,
 				EB64C7252973A69A003254E5 /* Extension-TextField.swift in Sources */,
 				EB63E88129710D53008EC5CE /* SceneDelegate.swift in Sources */,
 				EB63E89629710E9F008EC5CE /* LoginVC.swift in Sources */,
 				EBD3287A2971F4E700F97A94 /* HomeModel.swift in Sources */,
 				EBD328732971174000F97A94 /* ForgotPasswordVC.swift in Sources */,
+				EB1761212974948F00567BEE /* GetCurrentEmail.swift in Sources */,
 				EB64C71E29731040003254E5 /* NewUnitAlertScreen.swift in Sources */,
-				EBD3288629725BDC00F97A94 /* ProfileScreen.swift in Sources */,
 				EBD3288429725BBA00F97A94 /* ProfileVC.swift in Sources */,
 				EB63E8A029710F91008EC5CE /* Alert.swift in Sources */,
 				EBD3287F2972475C00F97A94 /* SettingsScreen.swift in Sources */,

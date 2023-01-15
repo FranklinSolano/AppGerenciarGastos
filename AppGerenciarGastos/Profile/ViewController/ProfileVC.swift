@@ -6,10 +6,21 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
+import Firebase
+import AlamofireImage
 
 class ProfileVC: UIViewController {
     
     var screen: ProfileScreen?
+    let imagePicker: UIImagePickerController = UIImagePickerController()
+    var alert: Alert?
+    let storage = Storage.storage().reference()
+    let firestore = Firestore.firestore()
+    var user: [User] = []
+    var currentUser = Auth.auth().currentUser
     
     override func loadView() {
         screen = ProfileScreen()
@@ -18,8 +29,9 @@ class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         screen?.delegate(delegate: self)
+        configImagePicker()
+        alert = Alert(controller: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,17 +41,98 @@ class ProfileVC: UIViewController {
     }
     
 
-
+    func configImagePicker(){
+        imagePicker.delegate = self
+    }
+    
+    func getUserData(){
+        firestore.collection("usuarios").getDocuments { snapshot, error in
+            if error == nil {
+                if let snapshot {
+                    DispatchQueue.main.async {
+                        self.user = snapshot.documents.map({ document in
+                            return User(nome: document["nome"] as? String ?? "",
+                                        email: document["email"] as? String ?? "",
+                                        image: document["image"] as? String ?? "")
+                        })
+                        self.populateView(index: self.getIndex(email: self.currentUser?.email ?? ""))
+                    }
+                }
+            }
+        }
+    }
+    func populateView(index: Int){
+        screen?.nameLabel.text = user[index].email
+        screen?.nameLabel.textColor = .lightGray
+        screen?.emailLabel.text = user[index].nome
+        screen?.emailLabel.textColor = .lightGray
+        let url = URL(string: user[index].image) ?? URL(fileURLWithPath: "")
+        screen?.imageProfile.af.setImage(withURL: url)
+    }
+    
+    func getIndex(email: String) -> Int {
+        let index = user.firstIndex { $0.email == email } ?? 0
+            return index
+    }
 }
-extension ProfileVC: ProfileScreenProtocol {
-    func actionBackButton() {
+
+
+extension ProfileVC: ProfileScreenProtocol{
+    func actionEdit() {
+        self.alert?.alertEditPhoto(completion: { option in
+            switch option {
+            case .camera:
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true)
+                
+            case .library:
+                self.imagePicker.sourceType = .photoLibrary
+                self.present(self.imagePicker, animated: true)
+                
+            case .cancel:
+                break
+            }
+        })
         
+        
+    }
+    
+    func actionBack() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func actionEditButton() {
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.screen?.imageProfile.image = image
         
+            guard let imageData = image.pngData() else { return }
+            
+            let currentUser = GetCurrentUserEmail.getCurrentUserEmail
+            
+            storage.child("images/file.png").putData(imageData,metadata: nil) { _, error in
+                guard error == nil else {
+                    print("failed to upload", String(describing: error?.localizedDescription))
+                    return
+                }
+                self.storage.child("images/file.png").downloadURL { url, error in
+                    guard let url = url, error == nil else {return}
+                    let urlString = url.absoluteString
+
+                    DispatchQueue.main.async {
+                        self.screen?.imageProfile.image = image
+                    }
+
+                    let doc = self.firestore.collection("usuarios").document(currentUser)
+                    doc.updateData([
+                        "image": urlString
+                    ])
+                }
+            }
+        }
+        picker.dismiss(animated: true)
     }
-    
-    
 }

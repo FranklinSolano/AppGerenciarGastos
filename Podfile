@@ -13,5 +13,6 @@ target 'AppGerenciarGastos' do
   pod 'FirebaseFirestore'
   pod 'Firebase/Database'
   pod 'DropDown'
+  pod 'AlamofireImage', '~> 4.1'
 
 end
