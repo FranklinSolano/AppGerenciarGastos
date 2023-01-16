@@ -108,6 +108,7 @@ class SettingsScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     @objc func tappedBackButton(){
         delegate?.actionBackButton()
     }
@@ -144,12 +145,12 @@ class SettingsScreen: UIView {
     func configConstraints(){
         NSLayoutConstraint.activate([
             
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 5),
-            backButton.heightAnchor.constraint(equalToConstant: 20),
-            backButton.widthAnchor.constraint(equalToConstant: 20),
+            backButton.heightAnchor.constraint(equalToConstant: 25),
+            backButton.widthAnchor.constraint(equalToConstant: 25),
             
-            profileButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            profileButton.topAnchor.constraint(equalTo: backButton.topAnchor, constant: 30),
             profileButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             profileButton.widthAnchor.constraint(equalToConstant: 110),
             profileButton.heightAnchor.constraint(equalToConstant: 45),

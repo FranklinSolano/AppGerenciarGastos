@@ -139,8 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				EB64C7232973A57F003254E5 /* Extensions */,
-				EB64C71C2973100D003254E5 /* NewUnitAlert */,
 				EBD328742971E6F000F97A94 /* Cell */,
+				EB64C71C2973100D003254E5 /* NewUnitAlert */,
 				EBD3288229725B9B00F97A94 /* Profile */,
 				EBD3287D2972473900F97A94 /* Settings */,
 				EBD3286F297116BB00F97A94 /* ForgotPassword */,

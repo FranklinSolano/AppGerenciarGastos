@@ -26,59 +26,62 @@ class ProfileVC: UIViewController {
         screen = ProfileScreen()
         view = screen
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         configImagePicker()
         alert = Alert(controller: self)
+        configImagePicker()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
+                getUserData()
     }
     
-
+    
     func configImagePicker(){
         imagePicker.delegate = self
     }
     
-    func getUserData(){
-        firestore.collection("usuarios").getDocuments { snapshot, error in
-            if error == nil {
-                if let snapshot {
-                    DispatchQueue.main.async {
-                        self.user = snapshot.documents.map({ document in
-                            return User(nome: document["nome"] as? String ?? "",
-                                        email: document["email"] as? String ?? "",
-                                        image: document["image"] as? String ?? "")
-                        })
-                        self.populateView(index: self.getIndex(email: self.currentUser?.email ?? ""))
+        func getUserData(){
+            firestore.collection("usuarios").getDocuments { snapshot, error in
+                if error == nil {
+                    if let snapshot {
+                        DispatchQueue.main.async {
+                            self.user = snapshot.documents.map({ document in
+                                return User(nome: document["nome"] as? String ?? "",
+                                            email: document["email"] as? String ?? "",
+                                            image: document["image"] as? String ?? "")
+                            })
+                            self.populateView(index: self.getIndex(email: self.currentUser?.email ?? ""))
+                        }
                     }
                 }
             }
         }
-    }
-    func populateView(index: Int){
-        screen?.nameLabel.text = user[index].email
-        screen?.nameLabel.textColor = .lightGray
-        screen?.emailLabel.text = user[index].nome
-        screen?.emailLabel.textColor = .lightGray
-        let url = URL(string: user[index].image) ?? URL(fileURLWithPath: "")
-        screen?.imageProfile.af.setImage(withURL: url)
+        func populateView(index: Int){
+            screen?.emailLabel.text = user[index].email
+            screen?.emailLabel.textColor = .lightGray
+            screen?.nameLabel.text = user[index].nome
+            screen?.nameLabel.textColor = UIColor(red: 104/255, green: 215/255, blue: 147/255, alpha: 1)
+            let url = URL(string: user[index].image) ?? URL(fileURLWithPath: "")
+            screen?.imageProfile.af.setImage(withURL: url)
+        }
+    
+        func getIndex(email: String) -> Int {
+            let index = user.firstIndex { $0.email == email } ?? 0
+                return index
+        }
     }
     
-    func getIndex(email: String) -> Int {
-        let index = user.firstIndex { $0.email == email } ?? 0
-            return index
-    }
-}
-
 
 extension ProfileVC: ProfileScreenProtocol{
-    func actionEdit() {
+    func actionEditButton() {
         self.alert?.alertEditPhoto(completion: { option in
             switch option {
             case .camera:
@@ -93,14 +96,12 @@ extension ProfileVC: ProfileScreenProtocol{
                 break
             }
         })
-        
-        
     }
     
-    func actionBack() {
+    func actionBackButton() {
+      
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

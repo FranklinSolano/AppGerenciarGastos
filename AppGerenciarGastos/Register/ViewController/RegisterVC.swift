@@ -37,7 +37,9 @@ class RegisterVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = true
+        self.navigationController?.isNavigationBarHidden = true
     }
+    
     
     func configTextField(){
         screen?.configTextFieldDelegate(delegate: self)
