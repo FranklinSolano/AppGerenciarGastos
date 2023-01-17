@@ -7,13 +7,15 @@
 
 import UIKit
 import FirebaseAuth
+import Lottie
 
 class ForgotPasswordVC: UIViewController {
     
     var screen: ForgotPasswordScreen?
     var auth: Auth?
     var alert : Alert?
-     
+    
+    
     override func loadView() {
         screen = ForgotPasswordScreen()
         view = screen
@@ -33,29 +35,31 @@ class ForgotPasswordVC: UIViewController {
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
     }
+    
 }
-
-extension ForgotPasswordVC: UITextFieldDelegate{
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        screen?.validaTextField()
+    
+    extension ForgotPasswordVC: UITextFieldDelegate{
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            screen?.validaTextField()
+        }
+        
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
-
-extension ForgotPasswordVC: ForgotPasswordScreenProtocol{
-    func actionBackButton() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
-    func actionSendButton() {
-        let email:String = screen?.forgotPasswordTextField.text ?? ""
-        self.auth?.sendPasswordReset(withEmail: email)
-        self.alert?.getAlert(titulo: "Atenção", mensagem: "Email enviado para resetar a senha!",completion: {
+    extension ForgotPasswordVC: ForgotPasswordScreenProtocol{
+        func actionBackButton() {
             self.navigationController?.popViewController(animated: true)
-        })
+        }
+        
+        func actionSendButton() {
+            let email:String = screen?.forgotPasswordTextField.text ?? ""
+            self.auth?.sendPasswordReset(withEmail: email)
+            self.alert?.getAlert(titulo: "Atenção", mensagem: "Email enviado para resetar a senha!",completion: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
     }
-}
+

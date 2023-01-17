@@ -11,7 +11,7 @@ class HomeVC: UIViewController {
     
     var screen: HomeScreen?
     var data: [Data] = [Data(description: "Adicionar", subTitle: "Novo Elemento", image: UIImage(named: "test"))]
-    
+
     override func loadView() {
         screen = HomeScreen()
         screen?.configTableView(delegate: self, dataSource: self)
@@ -58,3 +58,5 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         present(vc, animated: true)
     }
 }
+ 
+

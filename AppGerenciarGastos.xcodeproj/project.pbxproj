@@ -11,6 +11,7 @@
 		EB17611C2974941800567BEE /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17611B2974941800567BEE /* ProfileScreen.swift */; };
 		EB17611F2974946E00567BEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17611E2974946E00567BEE /* User.swift */; };
 		EB1761212974948F00567BEE /* GetCurrentEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1761202974948F00567BEE /* GetCurrentEmail.swift */; };
+		EB176125297661A400567BEE /* 108609-forgot-password.json in Resources */ = {isa = PBXBuildFile; fileRef = EB176124297661A300567BEE /* 108609-forgot-password.json */; };
 		EB63E87F29710D53008EC5CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63E87E29710D53008EC5CE /* AppDelegate.swift */; };
 		EB63E88129710D53008EC5CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63E88029710D53008EC5CE /* SceneDelegate.swift */; };
 		EB63E88829710D54008EC5CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB63E88729710D54008EC5CE /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		EB17611B2974941800567BEE /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		EB17611E2974946E00567BEE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB1761202974948F00567BEE /* GetCurrentEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentEmail.swift; sourceTree = "<group>"; };
+		EB176124297661A300567BEE /* 108609-forgot-password.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "108609-forgot-password.json"; sourceTree = "<group>"; };
 		EB63E87B29710D53008EC5CE /* AppGerenciarGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGerenciarGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB63E87E29710D53008EC5CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB63E88029710D53008EC5CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,22 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		EB1761222976611600567BEE /* Useful */ = {
+			isa = PBXGroup;
+			children = (
+				EB1761232976618A00567BEE /* Lotties */,
+			);
+			path = Useful;
+			sourceTree = "<group>";
+		};
+		EB1761232976618A00567BEE /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				EB176124297661A300567BEE /* 108609-forgot-password.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
 		EB63E87229710D53008EC5CE = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +156,7 @@
 		EB63E87D29710D53008EC5CE /* AppGerenciarGastos */ = {
 			isa = PBXGroup;
 			children = (
+				EB1761222976611600567BEE /* Useful */,
 				EB64C7232973A57F003254E5 /* Extensions */,
 				EBD328742971E6F000F97A94 /* Cell */,
 				EB64C71C2973100D003254E5 /* NewUnitAlert */,
@@ -421,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB63E88B29710D54008EC5CE /* LaunchScreen.storyboard in Resources */,
+				EB176125297661A400567BEE /* 108609-forgot-password.json in Resources */,
 				EB63E8A229711043008EC5CE /* GoogleService-Info.plist in Resources */,
 				EB63E88829710D54008EC5CE /* Assets.xcassets in Resources */,
 			);

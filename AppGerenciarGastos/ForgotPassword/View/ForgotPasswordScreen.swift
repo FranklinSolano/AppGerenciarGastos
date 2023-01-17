@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import Lottie
 
 protocol ForgotPasswordScreenProtocol: AnyObject {
     func actionSendButton()
-    
     func actionBackButton()
 }
 
@@ -19,6 +19,8 @@ class ForgotPasswordScreen: UIView {
     func delegate(delegate: ForgotPasswordScreenProtocol){
         self.delegate = delegate
     }
+    
+    
     
     lazy var viewGreen: UIView = {
         let view = UIView()
@@ -77,25 +79,46 @@ class ForgotPasswordScreen: UIView {
         button.addTarget(self, action: #selector(tappedBackButon), for: .touchUpInside)
         return button
     }()
- 
+     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         configButtonEnable(false)
         configElementsViews()
+        setupAnimationView()
         configConstraints()
+     
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     @objc func tappedSendButton(){
         delegate?.actionSendButton()
     }
     
     @objc func tappedBackButon(){
         delegate?.actionBackButton()
+    }
+    // MARK: Adicionar animacao ao projeto
+    func setupAnimationView(){
+        let animationView = LottieAnimationView(name: "108609-forgot-password")
+        animationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.play()
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        viewGreen.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            
+            animationView.centerYAnchor.constraint(equalTo: viewGreen.centerYAnchor),
+            animationView.centerXAnchor.constraint(equalTo: viewGreen.centerXAnchor),
+            animationView.heightAnchor.constraint(equalToConstant: 200),
+            animationView.widthAnchor.constraint(equalToConstant: 200),
+            
+        ])
     }
  
     func configElementsViews(){
@@ -104,6 +127,7 @@ class ForgotPasswordScreen: UIView {
         addSubview(forgotPasswordTextField)
         addSubview(sendButton)
         addSubview(backButton)
+       
     }
     
     func configTextFieldDelegate(delegate: UITextFieldDelegate){
@@ -157,6 +181,8 @@ class ForgotPasswordScreen: UIView {
             sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             sendButton.heightAnchor.constraint(equalToConstant: 60),
             sendButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+      
+            
         ])
     }
 }

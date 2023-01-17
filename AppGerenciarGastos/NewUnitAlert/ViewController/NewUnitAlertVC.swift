@@ -35,16 +35,16 @@ class NewUnitAlertVC: UIViewController {
     
 
 extension NewUnitAlertVC: NewUnitAlertScreenProtocol {
-    func actionCancelButton() {
-
-        dismiss(animated: false)
-
-    }
     
     func actionCreatButton() {
-      
+        
+    }
+
+    func actionCancelButton() {
+        dismiss(animated: false)
     }
     
+  
     func actionAjudanteCheckBox() {
         if (checkBoxAjudante == false){
             screen?.checkBoxAjudanteButton.setBackgroundImage(UIImage(systemName: "square.fill"), for: .normal)

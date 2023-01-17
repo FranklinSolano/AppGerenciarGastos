@@ -14,5 +14,6 @@ target 'AppGerenciarGastos' do
   pod 'Firebase/Database'
   pod 'DropDown'
   pod 'AlamofireImage', '~> 4.1'
+  pod 'lottie-ios'
 
 end
