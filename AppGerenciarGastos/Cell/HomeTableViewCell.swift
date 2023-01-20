@@ -13,7 +13,7 @@ class HomeTableViewCell: UITableViewCell {
     lazy var image: UIImageView = {
        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .red
+        image.backgroundColor = .green
         image.clipsToBounds = true
         image.layer.cornerRadius = 20
         return image
@@ -51,6 +51,10 @@ class HomeTableViewCell: UITableViewCell {
         configConstraints()
         contentView.backgroundColor = .white
         
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     }
     
     func configElementsView(){

@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseFirestore
+import FirebaseAuth
 
 class NewUnitAlertVC: UIViewController {
     
     var screen: NewUnitAlertScreen?
     var checkBoxGerente = false
     var checkBoxAjudante = false
+    var firestore: Firestore?
+    var celulas: [DataFire] = []
+    var currentUser = Auth.auth().currentUser
     
     override func loadView() {
         screen = NewUnitAlertScreen()
@@ -23,7 +29,6 @@ class NewUnitAlertVC: UIViewController {
         screen?.delegate(delegate: self)
         screen?.nameUnitTextField.setBottomBorder()
         screen?.optionTextField.setBottomBorder()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,20 +36,34 @@ class NewUnitAlertVC: UIViewController {
         self.navigationItem.hidesBackButton = true
         self.navigationController?.isNavigationBarHidden = true
     }
-}
     
+    func savedDadosDatabase(){
+        //MARK: salvar dados no bancos de dados
+        let nameUnit = screen?.nameUnitTextField.text ?? ""
+        let newUnit = screen?.optionTextField.text ?? ""
+        let db = Firestore.firestore()
+        let data = ["nameUnit": nameUnit, "newUnit": newUnit]
+        db.collection("dadosCel").addDocument(data: data) { (error) in
+            if let error = error {
+                print("Erro ao salvar dados")
+            } else {
+                NotificationCenter.default.post(name: .realoadTableView, object: nil)
+                self.dismiss(animated: true)
+            }
+        }
+    }
+}
 
 extension NewUnitAlertVC: NewUnitAlertScreenProtocol {
     
     func actionCreatButton() {
-        
+        savedDadosDatabase()
     }
-
+    
     func actionCancelButton() {
         dismiss(animated: false)
     }
     
-  
     func actionAjudanteCheckBox() {
         if (checkBoxAjudante == false){
             screen?.checkBoxAjudanteButton.setBackgroundImage(UIImage(systemName: "square.fill"), for: .normal)

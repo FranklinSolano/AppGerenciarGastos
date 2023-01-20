@@ -18,6 +18,8 @@ class HomeScreen: UIView {
         self.delegate = delegate
     }
     
+ 
+    
     lazy var settingsButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false

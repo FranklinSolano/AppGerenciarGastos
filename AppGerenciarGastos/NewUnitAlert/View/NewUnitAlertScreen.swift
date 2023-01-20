@@ -182,6 +182,7 @@ class NewUnitAlertScreen: UIView {
         backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
         configElementsViews()
         configConstraints()
+       
     }
     
     required init?(coder: NSCoder) {

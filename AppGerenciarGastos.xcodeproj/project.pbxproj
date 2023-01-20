@@ -12,6 +12,10 @@
 		EB17611F2974946E00567BEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17611E2974946E00567BEE /* User.swift */; };
 		EB1761212974948F00567BEE /* GetCurrentEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1761202974948F00567BEE /* GetCurrentEmail.swift */; };
 		EB176125297661A400567BEE /* 108609-forgot-password.json in Resources */ = {isa = PBXBuildFile; fileRef = EB176124297661A300567BEE /* 108609-forgot-password.json */; };
+		EB29BB8A29774E7B00D0CBA1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29BB8929774E7B00D0CBA1 /* Data.swift */; };
+		EB29BB8E2979ADEA00D0CBA1 /* ProductionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29BB8D2979ADEA00D0CBA1 /* ProductionsVC.swift */; };
+		EB29BB902979AE0400D0CBA1 /* ProductionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29BB8F2979AE0400D0CBA1 /* ProductionsScreen.swift */; };
+		EB29BB94297B0CB500D0CBA1 /* Extension-NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29BB93297B0CB500D0CBA1 /* Extension-NotificationCenter.swift */; };
 		EB63E87F29710D53008EC5CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63E87E29710D53008EC5CE /* AppDelegate.swift */; };
 		EB63E88129710D53008EC5CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB63E88029710D53008EC5CE /* SceneDelegate.swift */; };
 		EB63E88829710D54008EC5CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB63E88729710D54008EC5CE /* Assets.xcassets */; };
@@ -30,7 +34,6 @@
 		EBD32871297116FB00F97A94 /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD32870297116FB00F97A94 /* ForgotPasswordScreen.swift */; };
 		EBD328732971174000F97A94 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD328722971174000F97A94 /* ForgotPasswordVC.swift */; };
 		EBD328762971E82200F97A94 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD328752971E82200F97A94 /* HomeTableViewCell.swift */; };
-		EBD328782971EB6600F97A94 /* HomeTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD328772971EB6600F97A94 /* HomeTableViewCellScreen.swift */; };
 		EBD3287A2971F4E700F97A94 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD328792971F4E700F97A94 /* HomeModel.swift */; };
 		EBD3287F2972475C00F97A94 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3287E2972475C00F97A94 /* SettingsScreen.swift */; };
 		EBD328812972478500F97A94 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD328802972478500F97A94 /* SettingsVC.swift */; };
@@ -45,6 +48,10 @@
 		EB17611E2974946E00567BEE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB1761202974948F00567BEE /* GetCurrentEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentEmail.swift; sourceTree = "<group>"; };
 		EB176124297661A300567BEE /* 108609-forgot-password.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "108609-forgot-password.json"; sourceTree = "<group>"; };
+		EB29BB8929774E7B00D0CBA1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		EB29BB8D2979ADEA00D0CBA1 /* ProductionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionsVC.swift; sourceTree = "<group>"; };
+		EB29BB8F2979AE0400D0CBA1 /* ProductionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionsScreen.swift; sourceTree = "<group>"; };
+		EB29BB93297B0CB500D0CBA1 /* Extension-NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-NotificationCenter.swift"; sourceTree = "<group>"; };
 		EB63E87B29710D53008EC5CE /* AppGerenciarGastos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGerenciarGastos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB63E87E29710D53008EC5CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB63E88029710D53008EC5CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +72,6 @@
 		EBD32870297116FB00F97A94 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
 		EBD328722971174000F97A94 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		EBD328752971E82200F97A94 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		EBD328772971EB6600F97A94 /* HomeTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCellScreen.swift; sourceTree = "<group>"; };
 		EBD328792971F4E700F97A94 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		EBD3287E2972475C00F97A94 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		EBD328802972478500F97A94 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -135,6 +141,39 @@
 			path = Lotties;
 			sourceTree = "<group>";
 		};
+		EB29BB8829774E6900D0CBA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB29BB8929774E7B00D0CBA1 /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB29BB8C2979ADD000D0CBA1 /* Productions */ = {
+			isa = PBXGroup;
+			children = (
+				EB29BB912979AFC200D0CBA1 /* ViewController */,
+				EB29BB922979AFD100D0CBA1 /* View */,
+			);
+			path = Productions;
+			sourceTree = "<group>";
+		};
+		EB29BB912979AFC200D0CBA1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB29BB8D2979ADEA00D0CBA1 /* ProductionsVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EB29BB922979AFD100D0CBA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB29BB8F2979AE0400D0CBA1 /* ProductionsScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EB63E87229710D53008EC5CE = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				EB1761222976611600567BEE /* Useful */,
+				EB29BB8C2979ADD000D0CBA1 /* Productions */,
 				EB64C7232973A57F003254E5 /* Extensions */,
 				EBD328742971E6F000F97A94 /* Cell */,
 				EB64C71C2973100D003254E5 /* NewUnitAlert */,
@@ -206,6 +246,7 @@
 		EB64C71C2973100D003254E5 /* NewUnitAlert */ = {
 			isa = PBXGroup;
 			children = (
+				EB29BB8829774E6900D0CBA1 /* Model */,
 				EBBEEFBE2973AC8000C47187 /* ViewController */,
 				EBBEEFBF2973AC9900C47187 /* View */,
 			);
@@ -216,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				EB64C7242973A69A003254E5 /* Extension-TextField.swift */,
+				EB29BB93297B0CB500D0CBA1 /* Extension-NotificationCenter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				EBD328752971E82200F97A94 /* HomeTableViewCell.swift */,
-				EBD328772971EB6600F97A94 /* HomeTableViewCellScreen.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -496,12 +537,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB63E89B29710F14008EC5CE /* RegisterScreen.swift in Sources */,
+				EB29BB94297B0CB500D0CBA1 /* Extension-NotificationCenter.swift in Sources */,
 				EB17611C2974941800567BEE /* ProfileScreen.swift in Sources */,
 				EBD3286C297116A000F97A94 /* HomeVC.swift in Sources */,
 				EB63E87F29710D53008EC5CE /* AppDelegate.swift in Sources */,
+				EB29BB902979AE0400D0CBA1 /* ProductionsScreen.swift in Sources */,
 				EB63E89829710EC5008EC5CE /* LoginScreen.swift in Sources */,
-				EBD328782971EB6600F97A94 /* HomeTableViewCellScreen.swift in Sources */,
 				EBD328812972478500F97A94 /* SettingsVC.swift in Sources */,
+				EB29BB8A29774E7B00D0CBA1 /* Data.swift in Sources */,
 				EB63E89D29710F38008EC5CE /* RegisterVC.swift in Sources */,
 				EBD3286E297116B200F97A94 /* HomeScreen.swift in Sources */,
 				EBD328762971E82200F97A94 /* HomeTableViewCell.swift in Sources */,
@@ -510,6 +553,7 @@
 				EB63E88129710D53008EC5CE /* SceneDelegate.swift in Sources */,
 				EB63E89629710E9F008EC5CE /* LoginVC.swift in Sources */,
 				EBD3287A2971F4E700F97A94 /* HomeModel.swift in Sources */,
+				EB29BB8E2979ADEA00D0CBA1 /* ProductionsVC.swift in Sources */,
 				EBD328732971174000F97A94 /* ForgotPasswordVC.swift in Sources */,
 				EB1761212974948F00567BEE /* GetCurrentEmail.swift in Sources */,
 				EB64C71E29731040003254E5 /* NewUnitAlertScreen.swift in Sources */,
