@@ -13,7 +13,8 @@ import FirebaseDatabase
 class HomeVC: UIViewController {
     
     var screen: HomeScreen?
-    var data: [Data] = [Data(description: "Adicionar", subTitle: "Novo Elemento", image: UIImage(named: "test"))]
+    var data: [Data] = []
+    var firstCel: [Data] = [Data(description: "Adicionar", subTitle: "Novo Elemento", image: UIImage(named: "test"))]
     var firestore = Firestore.firestore()
     var currentUser = Auth.auth().currentUser
     
@@ -85,16 +86,21 @@ extension HomeVC: HomeScreenProtocol {
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
+        return data.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 1   
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
+            cell?.setupCell(data: firstCel[indexPath.section])
+            return cell ?? UITableViewCell()
+        }
         let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
-        cell?.setupCell(data: data[indexPath.section])
+        cell?.setupCell(data: data[indexPath.section - 1] )
         return cell ?? UITableViewCell()
     }
     
@@ -116,8 +122,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             vc.modalPresentationStyle = .overCurrentContext
             present(vc, animated: true)
         } else {
-//            let vc:ProductionsVC = ProductionsVC()
-//            self.navigationController?.pushViewController(vc, animated: false)
+            let vc:ProductionsVC = ProductionsVC()
+            self.navigationController?.pushViewController(vc, animated: false)
             print("teste")
         }
     }

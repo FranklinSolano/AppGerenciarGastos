@@ -52,6 +52,28 @@ class NewUnitAlertVC: UIViewController {
             }
         }
     }
+    
+    func activeCheckBoxAjudante(){
+        if (checkBoxAjudante == false){
+            screen?.checkBoxAjudanteButton.setBackgroundImage(UIImage(systemName: "square.fill"), for: .normal)
+            screen?.checkBoxAjudanteButton.tintColor = UIColor(red: 104/255, green: 215/255, blue: 147/255, alpha: 2)
+            checkBoxAjudante = true
+        } else {
+            screen?.checkBoxAjudanteButton.setBackgroundImage(UIImage(systemName: ""), for: .normal)
+            checkBoxAjudante = false
+        }
+    }
+    
+    func activiCheckBoxGerente(){
+        if (checkBoxGerente == false){
+            screen?.checkBoxGerenteButton.setBackgroundImage(UIImage(systemName: "square.fill"), for: .normal)
+            screen?.checkBoxGerenteButton.tintColor = UIColor(red: 104/255, green: 215/255, blue: 147/255, alpha: 2)
+            checkBoxGerente = true
+        } else {
+            screen?.checkBoxGerenteButton.setBackgroundImage(UIImage(systemName: ""), for: .normal)
+            checkBoxGerente = false
+        }
+    }
 }
 
 extension NewUnitAlertVC: NewUnitAlertScreenProtocol {
@@ -65,25 +87,11 @@ extension NewUnitAlertVC: NewUnitAlertScreenProtocol {
     }
     
     func actionAjudanteCheckBox() {
-        if (checkBoxAjudante == false){
-            screen?.checkBoxAjudanteButton.setBackgroundImage(UIImage(systemName: "square.fill"), for: .normal)
-            screen?.checkBoxAjudanteButton.tintColor = UIColor(red: 104/255, green: 215/255, blue: 147/255, alpha: 2)
-            checkBoxAjudante = true
-        } else {
-            screen?.checkBoxAjudanteButton.setBackgroundImage(UIImage(systemName: ""), for: .normal)
-            checkBoxAjudante = false
-        }
+        activeCheckBoxAjudante()
     }
     
     func actionGerenteCheckBox() {
-        if (checkBoxGerente == false){
-            screen?.checkBoxGerenteButton.setBackgroundImage(UIImage(systemName: "square.fill"), for: .normal)
-            screen?.checkBoxGerenteButton.tintColor = UIColor(red: 104/255, green: 215/255, blue: 147/255, alpha: 2)
-            checkBoxGerente = true
-        } else {
-            screen?.checkBoxGerenteButton.setBackgroundImage(UIImage(systemName: ""), for: .normal)
-            checkBoxGerente = false
-        }
+      activiCheckBoxGerente()
     }
 }
 

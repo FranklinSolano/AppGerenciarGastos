@@ -8,22 +8,30 @@
 import UIKit
 
 class ProductionsAlertVC: UIViewController {
+    
+    var screen: ProductoinsAlertScreen?
+    
+    override func loadView() {
+        screen = ProductoinsAlertScreen()
+        view = screen
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.informationTextField.setBottomBorder()
+        screen?.delegate(delegate: self)
 
-        // Do any additional setup after loading the view.
+    }
+}
+
+extension ProductionsAlertVC: ProductoinsAlertScreenProtocol {
+    func actionCreatButton() {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func actionCancelButton() {
+        dismiss(animated: false)
     }
-    */
-
+    
+    
 }

@@ -105,6 +105,7 @@ class RegisterScreen: UIView {
         tf.keyboardType = .default
         tf.placeholder = "Digite seu email"
         tf.backgroundColor = .white
+        tf.autocapitalizationType = .none
         return tf
     }()
     

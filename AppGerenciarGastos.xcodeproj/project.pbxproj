@@ -29,6 +29,8 @@
 		EB64C71E29731040003254E5 /* NewUnitAlertScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64C71D29731040003254E5 /* NewUnitAlertScreen.swift */; };
 		EB64C7202973106A003254E5 /* NewUnitAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64C71F2973106A003254E5 /* NewUnitAlertVC.swift */; };
 		EB64C7252973A69A003254E5 /* Extension-TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB64C7242973A69A003254E5 /* Extension-TextField.swift */; };
+		EB7A54332990094D003B84CF /* ProductionsAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A54322990094D003B84CF /* ProductionsAlertVC.swift */; };
+		EB7A543529900983003B84CF /* ProductoinsAlertScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A543429900983003B84CF /* ProductoinsAlertScreen.swift */; };
 		EBD3286C297116A000F97A94 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3286B297116A000F97A94 /* HomeVC.swift */; };
 		EBD3286E297116B200F97A94 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD3286D297116B200F97A94 /* HomeScreen.swift */; };
 		EBD32871297116FB00F97A94 /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD32870297116FB00F97A94 /* ForgotPasswordScreen.swift */; };
@@ -67,6 +69,8 @@
 		EB64C71D29731040003254E5 /* NewUnitAlertScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUnitAlertScreen.swift; sourceTree = "<group>"; };
 		EB64C71F2973106A003254E5 /* NewUnitAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUnitAlertVC.swift; sourceTree = "<group>"; };
 		EB64C7242973A69A003254E5 /* Extension-TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-TextField.swift"; sourceTree = "<group>"; };
+		EB7A54322990094D003B84CF /* ProductionsAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionsAlertVC.swift; sourceTree = "<group>"; };
+		EB7A543429900983003B84CF /* ProductoinsAlertScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoinsAlertScreen.swift; sourceTree = "<group>"; };
 		EBD3286B297116A000F97A94 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		EBD3286D297116B200F97A94 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		EBD32870297116FB00F97A94 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 		EB63E87D29710D53008EC5CE /* AppGerenciarGastos */ = {
 			isa = PBXGroup;
 			children = (
+				EB7A542E299008F3003B84CF /* ProductionsAlert */,
 				EB1761222976611600567BEE /* Useful */,
 				EB29BB8C2979ADD000D0CBA1 /* Productions */,
 				EB64C7232973A57F003254E5 /* Extensions */,
@@ -354,6 +359,31 @@
 			isa = PBXGroup;
 			children = (
 				EBD3288329725BBA00F97A94 /* ProfileVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EB7A542E299008F3003B84CF /* ProductionsAlert */ = {
+			isa = PBXGroup;
+			children = (
+				EB7A543029900918003B84CF /* ViewController */,
+				EB7A542F2990090E003B84CF /* View */,
+			);
+			path = ProductionsAlert;
+			sourceTree = "<group>";
+		};
+		EB7A542F2990090E003B84CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB7A543429900983003B84CF /* ProductoinsAlertScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB7A543029900918003B84CF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB7A54322990094D003B84CF /* ProductionsAlertVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -560,6 +590,8 @@
 				EBD3288429725BBA00F97A94 /* ProfileVC.swift in Sources */,
 				EB63E8A029710F91008EC5CE /* Alert.swift in Sources */,
 				EBD3287F2972475C00F97A94 /* SettingsScreen.swift in Sources */,
+				EB7A54332990094D003B84CF /* ProductionsAlertVC.swift in Sources */,
+				EB7A543529900983003B84CF /* ProductoinsAlertScreen.swift in Sources */,
 				EB64C7202973106A003254E5 /* NewUnitAlertVC.swift in Sources */,
 				EBD32871297116FB00F97A94 /* ForgotPasswordScreen.swift in Sources */,
 			);

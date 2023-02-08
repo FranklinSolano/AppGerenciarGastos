@@ -85,6 +85,7 @@ class NewUnitAlertScreen: UIView {
         tf.keyboardType = .default
         tf.placeholder = "Agricultura"
         tf.backgroundColor = .white
+        tf.text = "teste"
         return tf
     }()
     
